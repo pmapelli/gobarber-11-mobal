@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
   }, [navigate]);
 
   useEffect(() => {
-    api.get('providers').then(response => {
+    api.get('/providers').then(response => {
       setProviders(response.data);
     });
   }, []);
