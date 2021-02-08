@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
   const { navigate } = useNavigation();
 
   useEffect(() => {
-    api.get('/providers').then(response => {
+    api.get('providers').then(response => {
       setProviders(response.data);
     });
   }, []);
