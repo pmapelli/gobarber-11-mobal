@@ -115,8 +115,6 @@ const CreateAppointment: React.FC = () => {
 
   const handleCreateAppointment = useCallback(async () => {
     try {
-      console.log('Entrou');
-
       const date = new Date(selectedDate);
 
       date.setHours(selectedHour);
@@ -126,8 +124,6 @@ const CreateAppointment: React.FC = () => {
         provider_id: selectedProvider,
         date,
       });
-
-      console.log(result.data);
 
       navigate('AppointmentCreated', { date: date.getTime() });
     } catch (err) {
@@ -205,7 +201,7 @@ const CreateAppointment: React.FC = () => {
             <DateTimePicker
               mode="date"
               display={Platform.OS === 'android' ? 'calendar' : 'spinner'}
-              textColor="#f4ede8"
+              // textColor="#f4ede8"
               value={selectedDate}
               onChange={handleDateChange}
             />
